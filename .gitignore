@@ -1,0 +1,25 @@
+# Python and uv
+.venv/
+__pycache__/
+*.py[cod]
+
+# MkDocs build output
+site/
+_site/
+
+# Editor files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Sensitive CPTS material
+.env
+*.ovpn
+*.pem
+*.key
+credentials/
+loot/
+flags/

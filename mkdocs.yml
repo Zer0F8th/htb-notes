@@ -1,0 +1,172 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
+site_name: HTB Notes
+site_description: Hack The Box penetration-testing notes and methodology
+site_author: Zer0F8th
+
+docs_dir: docs
+site_dir: site
+
+copyright: Copyright &copy; 2026 Zer0F8th
+
+theme:
+  name: material
+  language: en
+
+  icon:
+    logo: material/security
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+    annotation: material/arrow-right-circle
+
+  font:
+    text: Roboto
+    code: JetBrains Mono
+
+  # Dark HTB theme is the default.
+  palette:
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+  features:
+    # Navigation
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+
+    # Table of contents
+    - toc.follow
+
+    # Search
+    - search.suggest
+    - search.highlight
+    - search.share
+
+    # Code blocks
+    - content.code.copy
+    - content.code.select
+    - content.code.annotate
+
+    # General content
+    - content.tabs.link
+    - content.tooltips
+
+plugins:
+  - search:
+      lang: en
+      separator: '[\s\-\.]+'
+  - tags:
+      enabled: true
+      tags_hierarchy: true
+      tags_file: tags.md
+
+markdown_extensions:
+  # Standard extensions
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+
+  - toc:
+      permalink: true
+      permalink_title: Link to this section
+      toc_depth: 4
+
+  # PyMdown extensions
+  - pymdownx.betterem:
+      smart_enable: all
+
+  - pymdownx.caret
+  - pymdownx.details
+
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  # Pygments syntax highlighting
+  - pymdownx.highlight:
+      use_pygments: true
+      guess_lang: false
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+      auto_title: false
+      linenums: false
+      linenums_style: pymdownx-inline
+
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.snippets
+
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - pymdownx.tabbed:
+      alternate_style: true
+      combine_header_slug: true
+
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: false
+
+  - pymdownx.tilde
+
+# This path is relative to docs_dir.
+# It resolves to docs/stylesheets/htb.css.
+extra_css:
+  - stylesheets/htb.css
+
+extra:
+  generator: false
+
+# This navigation matches the files shown in your build output.
+nav:
+  - Home: index.md
+
+  - Getting Started: getting-started/index.md
+
+  - Methodology: methodology/index.md
+
+  - Enumeration: 
+      - Overview: enumeration/index.md
+      - Nmap: enumeration/nmap/index.md
+
+  - Attacks:
+      - Overview: attacks/index.md
+      - Web Attacks: attacks/web/index.md
+      - Linux Attacks: attacks/linux/index.md
+      - Windows Attacks: attacks/windows/index.md
+      - Active Directory: attacks/active-directory/index.md
+
+  - Pivoting: pivoting/index.md
+
+  - Tools: tools/index.md
+
+  - Cheat Sheets: cheat-sheets/index.md
+
+  - Reporting: reporting/index.md
+
+  - Tags: tags.md
